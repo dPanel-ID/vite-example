@@ -1,0 +1,23 @@
+# Cloud Devetek Standard Definition v0.0.1-alpha.0 Go Example
+version: v0.0.1-alpha.0
+
+setup:
+  language:
+    name: nodejs
+    version: v18.19.0
+
+build:
+  target:
+    ## -> Build app non docker (tar.gz)
+    machine: # exec sequentially
+      workdir: .
+      steps:
+        - name: "build application"
+          command:
+            - yarn
+            - yarn build
+            - yarn install --production
+        - name: "create application artifact"
+          archive:
+            - ./dist
+            - ./node_modules
