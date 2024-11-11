@@ -21,3 +21,6 @@ build:
           archive:
             - ./dist
             - ./node_modules
+
+run:
+  name: nodejs-vite-example
