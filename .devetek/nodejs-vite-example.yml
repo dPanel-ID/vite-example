@@ -24,3 +24,4 @@ build:
 
 run:
   name: nodejs-vite-example
+  no_service: true
