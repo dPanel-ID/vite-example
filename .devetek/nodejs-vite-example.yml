@@ -1,4 +1,3 @@
-# Cloud Devetek Standard Definition v0.0.1-alpha.0 Go Example
 version: v0.0.1-alpha.0
 
 setup:
@@ -8,8 +7,7 @@ setup:
 
 build:
   target:
-    ## -> Build app non docker (tar.gz)
-    machine: # exec sequentially
+    machine:
       workdir: .
       steps:
         - name: "build application"
@@ -17,7 +15,7 @@ build:
             - yarn
             - yarn build
             - yarn install --production
-        - name: "create application artifact"
+        - name: "Create Application Artifact"
           archive:
             - ./dist
             - ./node_modules
